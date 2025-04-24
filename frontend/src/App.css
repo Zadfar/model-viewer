@@ -1,0 +1,34 @@
+h1 {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.container {
+    display: flex;
+}
+
+.dashboard {
+    height: 100vh;
+    width: 20vw;
+    min-width: 270px;
+    background-color: #2a2b2e;
+    color: #fafafa;
+    margin: 0;
+    padding: 1.0rem;
+}
+
+.viewport {
+    width: 80vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.viewport:active {
+    cursor: grabbing;
+}
+
+#models {
+    height: 3rem;
+    width: 100%;
+    font-size: 1.3rem;
+}

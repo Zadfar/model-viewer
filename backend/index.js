@@ -10,18 +10,19 @@ connectDB();
 
 const app = express();
 
+const PORT = process.env.PORT || 5001;
+
 app.use(cors())
 app.use(express.json())
 app.use('/api/models', router);
 
 
 
-const server = app.listen(process.env.PORT, () => {
-    console.log(`server is running on port ${process.env.PORT}`);
+const server = app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`);
 });
 
 process.on('unhandledRejection', (err, promise) => {
     console.error(`Unhandled Rejection: ${err.message}`);
-    // Close server & exit process
     server.close(() => process.exit(1));
   });
