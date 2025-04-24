@@ -27,6 +27,149 @@ h1 {
     cursor: grabbing;
 }
 
+.divider {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 2.5rem;
+}
+
+.upload-button {
+    width: 100%;
+    height: 100%;
+    background-color: #4285f4;
+    border: none;
+    color: #fafafa;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-radius: 8px;
+}
+
+.upload-button:hover {
+    background-color: #7baaf7;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+  
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+  
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #555;
+    font-weight: 600;
+    text-align: center;
+}
+  
+.modal-form-group {
+    margin-bottom: 20px;
+}
+  
+.modal-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1rem;
+}
+  
+.modal-input,
+.modal-file-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+  
+.modal-input:focus,
+.modal-file-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+  
+.modal-file-input::file-selector-button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.modal-file-input::file-selector-button:hover {
+    background-color: #e0e0e0;
+}
+  
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+}
+  
+.modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+  
+.modal-button.submit {
+    background-color: #007bff;
+    color: white;
+}
+  
+.modal-button.submit:hover {
+    background-color: #0056b3;
+}
+  
+.modal-button.close {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+  
+.modal-button.close:hover {
+    background-color: #e0e0e0;
+}
+
+.loader {
+    z-index: 1001;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #models {
     height: 3rem;
     width: 100%;

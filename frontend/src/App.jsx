@@ -1,6 +1,7 @@
 import './App.css';
 import ModelList from './components/ModelList';
 import Viewport from './components/Viewport';
+import UploadButton from './components/UploadButton';
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
           <h1>3D Model Viewer</h1>
         <h2>Choose a Model</h2>
         <ModelList />
+        <UploadButton />
         </div>
         <Viewport />
       </div>

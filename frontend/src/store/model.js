@@ -17,4 +17,9 @@ export const useModelStore = create((set) => ({
     setSelectedModelId: (id) => {
         set({selectedModelId: id});
     },
+    addModel: (newModel) => {
+        set((state) => ({
+          models: [newModel, ...state.models],
+        }));
+    },
 }))

@@ -13,10 +13,10 @@ const ModelList = () => {
                 const c = e.target.value;
                 setSelectedModelId(c);
             }}>
-            <option value="">-- Select a Model --</option>
+            <option value="">-- None --</option>
             {models.map((model) => {
                     return (
-                        <option key={model.dataPublicId} value={model.dataUrl}>{model.dataName}</option>
+                        <option key={model._id} value={model._id}>{model.dataName}</option>
                     );
                 })}
             </select>

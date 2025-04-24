@@ -17,8 +17,9 @@ function Model({ url }) {
 
 
 const Viewport = () => {
-    const { selectedModelId } = useModelStore();
-    const modelUrl = selectedModelId;
+    const { selectedModelId, models } = useModelStore();
+    const modelData = models.find(model => model._id == selectedModelId)
+    const modelUrl = modelData?.dataUrl;
 
     return (
         <div className='viewport'>
@@ -30,9 +31,7 @@ const Viewport = () => {
                 <Suspense fallback={<Loader />}>
                     {modelUrl ? (
                         <Model url={modelUrl} />
-                    ) : (
-                        <Html center>Please select a model</Html>
-                    )}
+                    ) : (null)}
                 </Suspense>
                 <OrbitControls />
                 <Grid infiniteGrid position={[0, -0.1, 0]} />
