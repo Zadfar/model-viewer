@@ -22,4 +22,10 @@ export const useModelStore = create((set) => ({
           models: [newModel, ...state.models],
         }));
     },
+    removeModel: (modelId) => {
+        set((state) => ({
+            models: state.models.filter(model => model._id !== modelId),
+            selectedModelId: state.selectedModelId === modelId ? null : state.selectedModelId,
+          }));
+    },
 }))

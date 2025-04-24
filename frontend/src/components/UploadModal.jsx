@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {BeatLoader} from 'react-spinners';
 
 const UploadModal = ({ isOpen, onClose, onSubmit }) => {
   const [modelName, setModelName] = useState('');
