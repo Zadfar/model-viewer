@@ -59,6 +59,7 @@ const UploadButton = () => {
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 onSubmit={handleUploadSubmit}
+                isLoading={isLoading}
             />
             <BeatLoader loading={isLoading} size={50} color='#007bff' className='loader' />
         </div>

@@ -1,3 +1,9 @@
+.container {
+    display: flex;
+}
+
+/* Header */
+
 .header {
     text-align: center;
     background-color: #353535;
@@ -11,9 +17,7 @@
     font-weight: 600;
 }
 
-.container {
-    display: flex;
-}
+/* Dashboard */
 
 .dashboard {
     height: 100vh;
@@ -28,6 +32,8 @@
     padding: 1.0rem;
 }
 
+/* Viewport */
+
 .viewport {
     width: 80vw;
     height: 100vh;
@@ -37,6 +43,8 @@
 .viewport:active {
     cursor: grabbing;
 }
+
+/* Buttons */
 
 .divider {
     margin-top: 1rem;
@@ -73,6 +81,8 @@
 .delete-button:hover {
     background-color: #FF033E;
 }
+
+/* Modal */
 
 .modal-overlay {
     position: fixed;
@@ -188,16 +198,14 @@
     background-color: #e0e0e0;
 }
 
+/* Other */
+
 .loader {
     z-index: 1001;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.loader::backdrop {
-    background: rgba(0, 0, 0, 0.6);
 }
 
 #models {

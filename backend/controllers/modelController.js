@@ -102,7 +102,7 @@ export const deleteModel = async (req, res, next) => {
         return res.status(404).json({ success: false, message: `Model not found with id ${req.params.id}` });
       }
  
-      await cloudinary.uploader.destroy(model.dataPublicId, { resource_type: 'raw' });
+      await cloudinary.uploader.destroy(model.dataPublicId);
       await model.deleteOne();
  
       res.status(200).json({

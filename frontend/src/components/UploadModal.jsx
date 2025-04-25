@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {BeatLoader} from 'react-spinners';
 
-const UploadModal = ({ isOpen, onClose, onSubmit, }) => {
+const UploadModal = ({ isOpen, onClose, onSubmit, isLoading }) => {
   const [modelName, setModelName] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileNameDisplay, setFileNameDisplay] = useState('');
@@ -31,7 +31,6 @@ const UploadModal = ({ isOpen, onClose, onSubmit, }) => {
       alert('Please provide a model name and select a GLB file.');
       return;
     }
-
     onSubmit(modelName, selectedFile);
   };
 
@@ -70,10 +69,10 @@ const UploadModal = ({ isOpen, onClose, onSubmit, }) => {
           </div>
 
           <div className="modal-actions">
-            <button type="button" className="modal-button close" onClick={onClose}>
+            <button type="button" className="modal-button close" onClick={onClose} disabled={isLoading}>
               Cancel
             </button>
-            <button type="submit" className="modal-button submit">
+            <button type="submit" className="modal-button submit" disabled={isLoading}>
               Upload
             </button>
           </div>
