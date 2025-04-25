@@ -208,6 +208,18 @@
     transform: translate(-50%, -50%);
 }
 
+.grid-toggle {
+    padding: 1rem;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.check {
+    width: 18px;
+    height: 18px;
+    margin-left: 1rem;
+}
+
 #models {
     height: 3rem;
     width: 100%;

@@ -3,10 +3,11 @@ import ModelList from './components/ModelList';
 import Viewport from './components/Viewport';
 import UploadButton from './components/UploadButton';
 import DeleteButton from './components/DeleteButton';
+import { useModelStore } from './store/model';
 
 
 const App = () => {
-
+  const { useGrid, toggleUseGrid, useAnimation, toggleUseAnimation } = useModelStore();
   return (
     <>
       <div className='container'>
@@ -19,6 +20,14 @@ const App = () => {
             <ModelList />
             <UploadButton />
             <DeleteButton />
+            <div className='grid-toggle'>
+              <label>Grid</label>
+              <input type="checkbox" className='check' checked={useGrid} onChange={toggleUseGrid} />
+            </div>
+            <div className='grid-toggle'>
+              <label>Animations</label>
+              <input type="checkbox" className='check' checked={useAnimation} onChange={toggleUseAnimation} />
+            </div>
           </div>
         </div>
         <Viewport />

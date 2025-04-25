@@ -28,4 +28,16 @@ export const useModelStore = create((set) => ({
             selectedModelId: state.selectedModelId === modelId ? null : state.selectedModelId,
           }));
     },
+    useGrid: true,
+    toggleUseGrid: () => {
+        set((state) => ({
+            useGrid: !state.useGrid
+        }))
+    },
+    useAnimation: true,
+    toggleUseAnimation: () => {
+        set((state) => ({
+            useAnimation: !state.useAnimation
+        }))
+    },
 }))
