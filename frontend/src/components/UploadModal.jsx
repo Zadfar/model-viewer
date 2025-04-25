@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {BeatLoader} from 'react-spinners';
 
-const UploadModal = ({ isOpen, onClose, onSubmit }) => {
+const UploadModal = ({ isOpen, onClose, onSubmit, }) => {
   const [modelName, setModelName] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileNameDisplay, setFileNameDisplay] = useState('');

@@ -30,7 +30,7 @@ const DeleteButton = () => {
     }
     return (
         <div className='divider'>
-            <button className='delete-button' onClick={handleDelete} disabled={!selectedModelId}>Delete Model</button>
+            <button className='delete-button' onClick={handleDelete} disabled={!selectedModelId || isLoading}>Delete Model</button>
             <BeatLoader loading={isLoading} size={50} color='#007bff' className='loader' />
         </div>
     )

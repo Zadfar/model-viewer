@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Grid, OrbitControls, useGLTF, Html, useProgress } from '@react-three/drei';
+import { OrbitControls, useGLTF, Html, useProgress, Stage } from '@react-three/drei';
 import { useModelStore } from '../store/model';
 
 function Loader() {
@@ -30,11 +30,14 @@ const Viewport = () => {
 
                 <Suspense fallback={<Loader />}>
                     {modelUrl ? (
-                        <Model url={modelUrl} />
+                          <Stage adjustCamera shadows={false} intensity={0.4}>
+                          <mesh>
+                          <Model url={modelUrl} />
+                          </mesh>
+                          </Stage>
                     ) : (null)}
                 </Suspense>
                 <OrbitControls />
-                <Grid infiniteGrid position={[0, -0.1, 0]} />
             </Canvas>
         </div>
   );

@@ -11,11 +11,15 @@ const App = () => {
     <>
       <div className='container'>
         <div className='dashboard'>
-          <h1>3D Model Viewer</h1>
-        <h2>Choose a Model</h2>
-        <ModelList />
-        <UploadButton />
-        <DeleteButton />
+          <div className='header'>
+            <h1>3D Model Viewer</h1>
+          </div>
+          <div className='dashboard-items'>
+            <h2>Choose a Model</h2>
+            <ModelList />
+            <UploadButton />
+            <DeleteButton />
+          </div>
         </div>
         <Viewport />
       </div>
