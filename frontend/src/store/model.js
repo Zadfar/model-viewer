@@ -6,7 +6,7 @@ export const useModelStore = create((set) => ({
     selectedModelId: null,
     setModels: (models) => set({models}),
     fetchModels: async () => {
-        const res = await axios.get("/api/models");
+        const res = await axios.get("https://model-viewer-backend.onrender.com/api/models");
         if (res.data.success) {
             set({models: res.data.data});
         }

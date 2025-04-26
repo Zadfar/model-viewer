@@ -32,7 +32,7 @@ const UploadButton = () => {
 
         setIsLoading(true);
         try {
-            const response = await axios.post('/api/models/upload', formData, {
+            const response = await axios.post('https://model-viewer-backend.onrender.com/api/models/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

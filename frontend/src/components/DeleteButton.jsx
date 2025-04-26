@@ -17,7 +17,7 @@ const DeleteButton = () => {
         }
         setIsLoading(true);
         try {
-            const response = await axios.delete(`/api/models/${selectedModelId}`)
+            const response = await axios.delete(`https://model-viewer-backend.onrender.com/api/models/${selectedModelId}`)
             if(response.data.success) {
                 toast.success(`Model "${modelName}" deleted successfully!`);
                 removeModel(selectedModelId);

@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api" : {
-        target: "https://model-viewer-backend.onrender.com",
+        target: "http://localhost:5001",
       }
     }
   },
