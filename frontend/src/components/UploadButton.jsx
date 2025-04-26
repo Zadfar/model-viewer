@@ -36,7 +36,7 @@ const UploadButton = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            alert(`"${response.data.data.dataName}.glb" uploaded successfully!`);
+            alert(`"${response.data.data.dataName}" uploaded successfully!`);
             setIsLoading(false);
 
             if (response.data.success && response.data.data) {
