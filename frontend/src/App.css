@@ -35,10 +35,6 @@
     margin: 0;
 }
 
-.dashboard-items.hidden {
-    display: none;
-} 
-
 .dashboard-items {
     padding: 1.0rem;
 }
@@ -82,6 +78,10 @@
         min-width: 100vw;
         height: fit-content;
     }
+
+    .dashboard-items.hidden {
+        display: none;
+    } 
 }
 
 /* Viewport */

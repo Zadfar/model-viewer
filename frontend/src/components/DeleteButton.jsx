@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import { useModelStore } from '../store/model';
 import {BeatLoader} from 'react-spinners';
+import toast, { Toaster } from 'react-hot-toast';
 
 const DeleteButton = () => {
     const { selectedModelId, removeModel } = useModelStore();
@@ -11,19 +12,18 @@ const DeleteButton = () => {
         const modelToDelete = useModelStore.getState().models.find(m => m._id === selectedModelId);
         const modelName = modelToDelete ? modelToDelete.dataName : 'the selected model';
 
-        if (!window.confirm(`Are you sure you want to delete "${modelName}"? This action cannot be undone.`)) {
+        if (!window.confirm(`Are you sure you want to delete "${modelName}"?`)) {
             return;
         }
         setIsLoading(true);
         try {
             const response = await axios.delete(`/api/models/${selectedModelId}`)
             if(response.data.success) {
-                alert(`Model "${modelName}" deleted successfully!`);
+                toast.success(`Model "${modelName}" deleted successfully!`);
                 removeModel(selectedModelId);
             }
         } catch (error) {
-            console.error('Deletion failed:', error.response ? error.response.data : error.message);
-            alert(`Deletion failed: ${error.response?.data?.message || 'Server error or network issue'}`);
+            toast.error(`Deletion failed: ${error.response?.data?.message || 'Server error or network issue'}`);
         } finally {
             setIsLoading(false);
         }
@@ -32,6 +32,7 @@ const DeleteButton = () => {
         <div className='divider'>
             <button className='delete-button' onClick={handleDelete} disabled={!selectedModelId || isLoading}>Delete Model</button>
             <BeatLoader loading={isLoading} size={50} color='#007bff' className='loader' />
+            <Toaster />
         </div>
     )
 };

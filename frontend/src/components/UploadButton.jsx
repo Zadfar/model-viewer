@@ -3,6 +3,7 @@ import UploadModal from './UploadModal';
 import axios from 'axios';
 import {BeatLoader} from 'react-spinners';
 import {useModelStore} from '../store/model'
+import toast, { Toaster } from 'react-hot-toast';
 
 const UploadButton = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,7 +22,7 @@ const UploadButton = () => {
         console.log('Submitting:', { name, file });
 
         if (!file) {
-            alert('No file selected!');
+            toast.error('No file selected!');
             return;
         }
 
@@ -36,7 +37,7 @@ const UploadButton = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            alert(`"${response.data.data.dataName}" uploaded successfully!`);
+            toast.success(`"${response.data.data.dataName}" uploaded successfully!`);
             setIsLoading(false);
 
             if (response.data.success && response.data.data) {
@@ -45,7 +46,7 @@ const UploadButton = () => {
             handleCloseModal();
 
         } catch (error) {
-            alert(`Upload failed: 'Server error'}`);
+            toast.error(`Upload failed: 'Server error'}`);
             setIsLoading(false);
         }
     };
@@ -62,6 +63,7 @@ const UploadButton = () => {
                 isLoading={isLoading}
             />
             <BeatLoader loading={isLoading} size={50} color='#007bff' className='loader' />
+            <Toaster />
         </div>
     );
 };
