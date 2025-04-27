@@ -1,4 +1,4 @@
-# MERN 3D Model Viewer (React Three Fiber & Cloudinary)
+# 3D Model Viewer
 
 A full-stack web application built with the MERN (MongoDB, Express, React, Node.js) stack to upload, manage, and display 3D models (GLB/GLTF format). It utilizes Cloudinary for cloud-based file storage and React Three Fiber for interactive 3D rendering in the browser.
 
