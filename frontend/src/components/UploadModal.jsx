@@ -56,7 +56,7 @@ const UploadModal = ({ isOpen, onClose, onSubmit, isLoading }) => {
           </div>
 
           <div className="modal-form-group">
-            <label htmlFor="modelFile">GLB File (.glb):</label>
+            <label htmlFor="modelFile">.glb File (max 10mb):</label>
             <input
               type="file"
               id="modelFile"

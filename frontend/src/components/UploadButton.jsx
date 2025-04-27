@@ -46,7 +46,7 @@ const UploadButton = () => {
             handleCloseModal();
 
         } catch (error) {
-            toast.error(`Upload failed: 'Server error'}`);
+            toast.error(`Upload failed: 'Server error'`);
             setIsLoading(false);
         }
     };
