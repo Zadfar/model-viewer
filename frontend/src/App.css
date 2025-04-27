@@ -91,10 +91,6 @@
     height: 100vh;
 }
 
-.viewport:active {
-    cursor: grabbing;
-}
-
 /* Buttons */
 
 .divider {
