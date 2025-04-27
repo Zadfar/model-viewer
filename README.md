@@ -40,8 +40,8 @@ A full-stack web application built with the MERN (MongoDB, Express, React, Node.
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd <repository-name>
+    git clone https://github.com/Zadfar/model-viewer.git
+    cd model-viewer
     ```
 
 2.  **Backend Setup:**
