@@ -267,7 +267,7 @@
     margin-left: 1rem;
 }
 
-#models {
+#models, #animations {
     height: 3rem;
     width: 100%;
     font-size: 1.3rem;

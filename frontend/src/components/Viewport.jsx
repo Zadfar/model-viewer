@@ -10,7 +10,7 @@ function Loader() {
 }
 
 function Model({ url }) {
-  const {useAnimation} = useModelStore();
+  const {useAnimation, setAnimationArray, animationArray, selectedAnimation} = useModelStore();
   const { scene, animations } = useGLTF(url);
   const modelRef = useRef();
   const mixerRef = useRef();
@@ -28,9 +28,11 @@ function Model({ url }) {
         action.clampWhenFinished = true;
       });
 
-      const firstAnimationName = animations[0]?.name;
-      if (firstAnimationName && useAnimation) {
-        const actionToPlay = actionsRef.current[firstAnimationName];
+      setAnimationArray(animations);
+
+      const animationName = selectedAnimation;
+      if (animationName && useAnimation) {
+        const actionToPlay = actionsRef.current[animationName];
         if (actionToPlay) {
           actionToPlay.reset().play();
           setCurrentAction(actionToPlay);
@@ -43,7 +45,7 @@ function Model({ url }) {
         actionsRef.current = {};
         setCurrentAction(null);
     }
-  }, [animations, useAnimation]);
+  }, [animations, useAnimation, selectedAnimation]);
   useFrame((state, delta) => {
     mixerRef.current?.update(delta);
   });

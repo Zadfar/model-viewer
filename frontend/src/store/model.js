@@ -40,4 +40,8 @@ export const useModelStore = create((set) => ({
             useAnimation: !state.useAnimation
         }))
     },
+    animationArray: [],
+    setAnimationArray: (animationArray) => set({animationArray}),
+    selectedAnimation: null,
+    setSelectedAnimation: (name) => set({selectedAnimation: name}),
 }))

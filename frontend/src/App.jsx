@@ -7,6 +7,7 @@ import { useModelStore } from './store/model';
 import MenuIcon from './assets/menu.svg'
 import CrossIcon from './assets/cross.svg'
 import { useState } from 'react';
+import AnimationList from './components/AnimationList';
 
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
               <label>Animations</label>
               <input type="checkbox" className='check' checked={useAnimation} onChange={toggleUseAnimation} />
             </div>
+            <AnimationList />
           </div>
         </div>
         <Viewport />
